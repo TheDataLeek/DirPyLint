@@ -1,0 +1,97 @@
+#############################################################
+# Owner: Will Farmer                                        #
+# Date: May 14, 2012                                        #
+#                                                           #
+# This config file is for the dirpylint program             #
+# If any list is empty, put one entry as False              #
+#############################################################
+
+levels: 3 # total amount of levels
+
+root: /home/Documents # root directory
+
+# the ignore_tree field is for directories that you want ignored
+# the full file path must be given for these entries
+ignore_tree:
+    - False
+
+# BEGIN LEVEL SPECIFICATIONS
+level0:
+    dirs:
+        needs:
+            - need2
+            - need3
+            - need4
+        optional:
+            - blah
+            - blahblah
+        not:
+            - arg
+        regex: "[0-9]"
+        ignore:
+            - need1
+            - ignore
+    files:
+        types:
+            - .mp3
+            - .flac
+            - .txt
+        needs:
+            - README.txt
+        optional:
+            - False
+        not:
+            - hah.txt
+        regex: "[0-9]"
+        ignore:
+            - asd.mp3
+level1:
+    dirs:
+        needs:
+            - levelneed
+        optional:
+            - asdasdasd
+        not:
+            - asdasdasdasdasd
+        regex: False
+        ignore:
+            - False
+    files:
+        types:
+            - .mp3
+            - .flac
+            - .txt
+        needs:
+            - README.txt
+        optional:
+            - False
+        not:
+            - hah.txt
+        regex: False
+        ignore:
+            - False
+level2:
+    dirs:
+        needs:
+            - False
+        optional:
+            - asdasdasd
+        not:
+            - asdasdasdasdasd
+        regex: False
+        ignore:
+            - False
+    files:
+        types:
+            - .mp3
+            - .flac
+            - .txt
+        needs:
+            - README.txt
+        optional:
+            - False
+        not:
+            - hah.txt
+        regex: False
+        ignore:
+            - False
